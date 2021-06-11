@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31229.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bindingLibrary", "bindingLibrary\bindingLibrary.csproj", "{11A2E33E-378F-4653-8687-F10362159EBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rtspClientLibrary", "rtspClientLibrary\rtspClientLibrary.csproj", "{3B216E59-EAC0-4817-A516-6CDE93AA15DE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A2E33E-378F-4653-8687-F10362159EBA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{3B216E59-EAC0-4817-A516-6CDE93AA15DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B216E59-EAC0-4817-A516-6CDE93AA15DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B216E59-EAC0-4817-A516-6CDE93AA15DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B216E59-EAC0-4817-A516-6CDE93AA15DE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F5C926C-9482-48F8-82BA-8166E742D60D}
+	EndGlobalSection
+EndGlobal
