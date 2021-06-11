@@ -10,12 +10,12 @@ namespace bindingLibrary.decode
     {
         string TAG = "FrameQueue";
 
-        BlockingQueue<Frame> queue = ArrayBlockingQueue(60);
+        IBlockingQueue queue = new ArrayBlockingQueue(60);
 
 
         public bool push(Frame frame)
         {
-            if (queue.offer(frame, 5, TimeUnit.Milliseconds))
+            if (queue.Offer( frame, 5, TimeUnit.Milliseconds))
             {
                 return true;
             }
@@ -26,7 +26,7 @@ namespace bindingLibrary.decode
         {
             try
             {
-                Frame frame = queue.poll(1000, TimeUnit.Milliseconds);
+                Frame frame = (Frame)queue.Poll(1000, TimeUnit.Milliseconds);
             if (frame == null)
                 {
                     System.Console.WriteLine("sin ningun frame que mostrar");
@@ -43,7 +43,7 @@ namespace bindingLibrary.decode
 
         public void clear()
         {
-            queue.clear();
+            queue.Clear();
          }
 
 

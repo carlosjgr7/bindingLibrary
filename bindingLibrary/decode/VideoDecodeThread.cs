@@ -14,9 +14,10 @@ namespace bindingLibrary.decode
         private int width;
         private int height;
         private FrameQueue videoFrameQueue;
-        // esta funncion debo pasarla a un hilo para que corra en segundo plano
 
-        public async Task run()
+
+        // esta funncion debo pasarla a un hilo para que corra en segundo plano
+        public void run()
         {
             MediaCodec decoder = MediaCodec.CreateDecoderByType(mimeType);
             MediaFormat format = MediaFormat.CreateVideoFormat(mimeType, width, height);
