@@ -21,7 +21,7 @@ namespace bindingLibrary.decode
 
             decoder.Configure(format, surface, null, 0);
             decoder.Start();
-            var bufferInfo = MediaCodec.BufferInfo();//esta clase esta en la libreria
+            var bufferInfo =new MediaCodec.BufferInfo();
 
             while (/*Revisar si el hilo sigue andando*/true)
             {
