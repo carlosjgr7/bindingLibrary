@@ -11,7 +11,7 @@ using System.Text;
 
 namespace bindingLibrary.decode
 {
-    public class Frame: Java.Lang.Object
+    public class Frame : Java.Lang.Object
     {
         public Byte[] data { get; set; }
         public int offset { get; set; }

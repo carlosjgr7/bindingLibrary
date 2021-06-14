@@ -15,7 +15,7 @@ namespace bindingLibrary.decode
 
         public bool push(Frame frame)
         {
-            if (queue.Offer( frame, 5, TimeUnit.Milliseconds))
+            if (queue.Offer(frame, 5, TimeUnit.Milliseconds))
             {
                 return true;
             }
@@ -27,24 +27,25 @@ namespace bindingLibrary.decode
             try
             {
                 Frame frame = (Frame)queue.Poll(1000, TimeUnit.Milliseconds);
-            if (frame == null)
+                if (frame == null)
                 {
                     System.Console.WriteLine("sin ningun frame que mostrar");
                 }
                 return frame;
-              }
-            catch ( InterruptedException e) {
+            }
+            catch (InterruptedException e)
+            {
                 Thread.CurrentThread().Interrupt();
-          }
+            }
             return null;
-  
+
         }
 
 
         public void clear()
         {
             queue.Clear();
-         }
+        }
 
 
     }
