@@ -24,10 +24,9 @@ namespace bindingLibrary.decode
         }
 
 
-
-        // esta funncion debo pasarla a un hilo para que corra en segundo plano
-        public void Run()
+        public override void Run()
         {
+            base.Run();
             MediaCodec decoder = MediaCodec.CreateDecoderByType(mimeType);
             MediaFormat format = MediaFormat.CreateVideoFormat(mimeType, width, height);
 
@@ -35,7 +34,7 @@ namespace bindingLibrary.decode
             decoder.Start();
             MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
 
-            while (/*Revisar si el hilo sigue andando*/true)
+            while (!Interrupted())
             {
                 int inIndex = decoder.DequeueInputBuffer(10000L);
                 if (inIndex >= 0)
@@ -65,7 +64,6 @@ namespace bindingLibrary.decode
                 }
                 try
                 {
-
                     int outIndex = decoder.DequeueOutputBuffer(bufferInfo, 10000);
                     switch (outIndex)
                     {

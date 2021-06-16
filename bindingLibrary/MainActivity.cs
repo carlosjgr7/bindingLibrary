@@ -6,7 +6,9 @@ using Android.Views;
 using Android.Widget;
 using AndroidX.AppCompat.App;
 using bindingLibrary.decode;
+using Java.Lang;
 using Java.Util.Concurrent.Atomic;
+
 
 namespace bindingLibrary
 {
@@ -70,18 +72,18 @@ namespace bindingLibrary
         
         }
 
-
         public void SurfaceChanged(ISurfaceHolder holder, [GeneratedEnum] Format format, int width, int height)
         {
             surface = holder.Surface;
             surfaceWidth = width;
             surfaceHeight = height;
-        if (videoDecodeThread != null)
-            {
-                videoDecodeThread.Interrupt();
-                videoDecodeThread = new VideoDecodeThread(surface, videoMimeType, width, height, videoFrameQueue);
-                videoDecodeThread.Start();
-            }
+
+            if (videoDecodeThread != null)
+                {
+                    videoDecodeThread.Interrupt();
+                    videoDecodeThread = new VideoDecodeThread(surface, videoMimeType, width, height, videoFrameQueue);
+                    videoDecodeThread.Start();
+                }
         }
 
         public void SurfaceCreated(ISurfaceHolder holder)
@@ -95,8 +97,14 @@ namespace bindingLibrary
             videoDecodeThread = null;    
         }
 
-        private class RtspThread
+        private class RtspThread: Thread
         {
+            public override void Run()
+            {
+                base.Run();
+                new Handler(Looper.MainLooper).Post(new);
+            }
+
         }
     }
 }
